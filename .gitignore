@@ -1,1 +1,6 @@
 steadfast-karma-177403-5484f69a7b47.json
+
+# Ignore vim files:
+*~
+*.swp
+*.swo
