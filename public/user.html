@@ -3,29 +3,51 @@
   <head>
     <title>USER Rdpoints</title>
     <meta charset="utf-8" />
-		<script  src="../public/js/tailwind.config.js"></script>
-		<script  src="../public/js/tailwind.js"></script>
+		<link rel="stylesheet" href="../public/css/tailwind.css">
 		<script  src="../public/js/user.js" type="module"></script>
-		<script > tailwind.config = window.config; </script>
   </head>
   <body class="bg-tuna-50 dark:bg-tuna-900">
 	
-<div class="relative overflow-x-auto container mx-auto">
-	<h2 class="text-2xl font-semibold text-tuna-900 dark:text-white p-5">Resumen</h2>
+
+<nav class="bg-white border-tuna-200 dark:bg-tuna-900 fixed w-full z-10  top-0 left-0 ">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <a href="https://flowbite.com/" class="flex items-center">
+      <img src="../public/images/logo2.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+		Acumulado RD-<span class=" dark:text-primary-500 ">POINTS</span>
+			</span>
+  </a>
+  <div class="flex md:order-2">
+      <button type="button" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Cerrar sesión</button>
+      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-tuna-500 rounded-lg md:hidden hover:bg-tuna-100 focus:outline-none focus:ring-2 focus:ring-tuna-200 dark:text-tuna-400 dark:hover:bg-tuna-700 dark:focus:ring-tuna-600" aria-controls="navbar-cta" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+  </div>
+  </div>
+</nav>
+
+
+
+<!--<div class="relative overflow-x-auto container mx-auto">-->
+<div class="container shadow-lg mx-auto mt-24 md:mt-16 h-screen">
+
 	<p id="idUserName" class="text-2xl font-semibold text-tuna-900 dark:text-white p-5">...</p>
-    <table class="w-full text-sm text-left text-tuna-500 dark:text-tuna-400">
+    <table class="w-full text-sm text-left text-tuna-500 dark:text-tuna-400 table-auto">
         <thead class="text-xs text-tuna-700 uppercase bg-tuna-100 dark:bg-tuna-700 dark:text-tuna-400">
             <tr>
                 <th scope="col" class="px-6 py-3 rounded-l-lg">
                    Actividad 
                 </th>
                 <th scope="col" class="px-6 py-3 rounded-r-lg">
-                    RD-Points
+									RD-<span class=" dark:text-primary-500 ">POINTS</span> 
                 </th>
             </tr>
         </thead>
         <tbody id="idTbody">
-            <tr id="idRowTemplate" class="bg-white dark:bg-tuna-800" hidden>
+            <tr id="idRowTemplate" class="bg-white dark:bg-tuna-800 border-b dark:border-gray-600" hidden>
 								<th scope="row" class="px-6 py-4 font-medium text-tuna-900 whitespace-nowrap dark:text-white">
 								</th>
                 <td class="px-6 py-4 dark:text-white">

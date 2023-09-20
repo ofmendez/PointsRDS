@@ -1,4 +1,8 @@
-const config = {
+/** @type {import('tailwindcss').Config} */
+export default {
+	content: [
+    './public/**/*.{html,jsx}',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -70,5 +74,6 @@ const config = {
   ]
     }
   }
-};
-window.config = config;
+
+}
+
