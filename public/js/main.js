@@ -8,7 +8,7 @@ window.TryLogin = (form)=>{
 	let requestOptions = {
 		method: 'GET',
 	};
-	fetch("http://localhost:5000/login?"+formdata , requestOptions)
+	fetch("/login?"+formdata , requestOptions)
 		.then(response => response.text())
 		.then(result => ProcessLogin(result))
 		.catch(error => console.log('error', error));

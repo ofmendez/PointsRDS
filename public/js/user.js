@@ -11,7 +11,7 @@ function checkAuth(){
 		headers: myHeaders,
 		redirect: 'follow'
 	};
-	fetch("http://localhost:5000/api/page?"+formdata, requestOptions)
+	fetch("/api/page?"+formdata, requestOptions)
 		.then(response => response.text())
 		.then(result => ProcessData(result))
 		.catch(e => {console.log('error', e); });
