@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <title>USER Rdpoints</title>
+    <meta charset="utf-8" />
+		<script  src="../public/js/tailwind.config.js"></script>
+		<script  src="../public/js/tailwind.js"></script>
+		<script  src="../public/js/user.js" type="module"></script>
+		<script > tailwind.config = window.config; </script>
+  </head>
+  <body class="bg-tuna-50 dark:bg-tuna-900">
+	
+<div class="relative overflow-x-auto container mx-auto">
+	<h2 class="text-2xl font-semibold text-tuna-900 dark:text-white p-5">Resumen</h2>
+	<p id="idUserName" class="text-2xl font-semibold text-tuna-900 dark:text-white p-5">...</p>
+    <table class="w-full text-sm text-left text-tuna-500 dark:text-tuna-400">
+        <thead class="text-xs text-tuna-700 uppercase bg-tuna-100 dark:bg-tuna-700 dark:text-tuna-400">
+            <tr>
+                <th scope="col" class="px-6 py-3 rounded-l-lg">
+                   Actividad 
+                </th>
+                <th scope="col" class="px-6 py-3 rounded-r-lg">
+                    RD-Points
+                </th>
+            </tr>
+        </thead>
+        <tbody id="idTbody">
+            <tr id="idRowTemplate" class="bg-white dark:bg-tuna-800" hidden>
+								<th scope="row" class="px-6 py-4 font-medium text-tuna-900 whitespace-nowrap dark:text-white">
+								</th>
+                <td class="px-6 py-4 dark:text-white">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr id="idRowFootTemplate" class="font-semibold text-tuna-900 dark:text-white" hidden>
+                <th scope="row" class="px-6 py-3 text-base">---</th>
+                <td class="px-6 py-3">---</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+  </body>
+</html>
