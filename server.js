@@ -1,6 +1,7 @@
 import {google} from 'googleapis';
 import {Hono} from 'hono';
 import { bearerAuth } from 'hono/bearer-auth';
+import { readFileSync } from 'node:fs';
 
 const serviceAccountKeyFile = "./steadfast-karma-177403-5484f69a7b47.json";
 const sheetId = '1Gpa2pbEs3cm1jKRB7MkDsMPV7mlzQ0RgJzmnO_v13rQ'
@@ -77,8 +78,10 @@ async function _writeGoogleSheet(googleSheetClient, sheetId, tabName, range, dat
 
 
 async function getEmail(_id) {
-	const file = Bun.file('./data.json');
-	const data = await file.json();
+	//const file = Bun.file('./data.json');
+	//const data = await file.json();
+	//const file = readFileSync('./data.json');
+	const data = JSON.parse(readFileSync('./data.json','utf8'));
 	let result ='';
 	data.forEach((user) => {
 		if(user.id === _id)
@@ -88,8 +91,11 @@ async function getEmail(_id) {
 }
 
 async function checkAuth(_email, _password) {
-	const file = Bun.file('./data.json');
-	const data = await file.json();
+	//const file = Bun.file('./data.json');
+	//const data = await file.json();
+	//const file = readFileSync('./data.json','utf8');
+	const data = JSON.parse(readFileSync('./data.json','utf8'));
+	
 	let result = {exist:false, user: {id:-1}};
 	data.forEach((user) => {
 		//console.log(user.email === _email, user.password === _password);
