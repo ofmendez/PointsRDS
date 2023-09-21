@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 
 const serviceAccountKeyFile = "./data/steadfast-karma-177403-5484f69a7b47.json";
 const sheetId = '1Gpa2pbEs3cm1jKRB7MkDsMPV7mlzQ0RgJzmnO_v13rQ'
-const tabName = 'Pruebas' //TODO change to Acumulado
+const tabName = 'Acumulado' //TODO change to Acumulado
 const range = 'B:P'
 
 

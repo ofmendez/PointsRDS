@@ -1,67 +1,89 @@
 <!DOCTYPE html>
 <html class="dark">
-  <head>
-    <title>USER Rdpoints</title>
-    <meta charset="utf-8" />
+	<head>
+		<title>USER Rdpoints</title>
+		<meta charset="utf-8" />
 		<link rel="stylesheet" href="../public/css/tailwind.css">
 		<script  src="../public/js/user.js" type="module"></script>
-  </head>
-  <body class="bg-tuna-50 dark:bg-tuna-900">
-	
-
-<nav class="bg-white border-tuna-200 dark:bg-tuna-900 fixed w-full z-10  top-0 left-0 ">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-  <a href="https://flowbite.com/" class="flex items-center">
-      <img src="../public/images/logo2.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-		Acumulado RD-<span class=" dark:text-primary-500 ">POINTS</span>
-			</span>
-  </a>
-  <div class="flex md:order-2">
-      <button type="button" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Cerrar sesión</button>
-      <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-tuna-500 rounded-lg md:hidden hover:bg-tuna-100 focus:outline-none focus:ring-2 focus:ring-tuna-200 dark:text-tuna-400 dark:hover:bg-tuna-700 dark:focus:ring-tuna-600" aria-controls="navbar-cta" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-  </div>
-  </div>
-</nav>
-
-
-
-<!--<div class="relative overflow-x-auto container mx-auto">-->
-<div class="container shadow-lg mx-auto mt-24 md:mt-16 h-screen">
-
-	<p id="idUserName" class="text-2xl font-semibold text-tuna-900 dark:text-white p-5">...</p>
-    <table class="w-full text-sm text-left text-tuna-500 dark:text-tuna-400 table-auto">
-        <thead class="text-xs text-tuna-700 uppercase bg-tuna-100 dark:bg-tuna-700 dark:text-tuna-400">
-            <tr>
-                <th scope="col" class="px-6 py-3 rounded-l-lg">
-                   Actividad 
-                </th>
-                <th scope="col" class="px-6 py-3 rounded-r-lg">
-									RD-<span class=" dark:text-primary-500 ">POINTS</span> 
-                </th>
-            </tr>
-        </thead>
-        <tbody id="idTbody">
-            <tr id="idRowTemplate" class="bg-white dark:bg-tuna-800 border-b dark:border-gray-600" hidden>
-								<th scope="row" class="px-6 py-4 font-medium text-tuna-900 whitespace-nowrap dark:text-white">
-								</th>
-                <td class="px-6 py-4 dark:text-white">
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr id="idRowFootTemplate" class="font-semibold text-tuna-900 dark:text-white" hidden>
-                <th scope="row" class="px-6 py-3 text-base">---</th>
-                <td class="px-6 py-3">---</td>
-            </tr>
-        </tfoot>
-    </table>
-</div>
-
-  </body>
+	</head>
+	<body class="bg-tuna-50 dark:bg-tuna-900">
+	<!---------------------------------NAVBAR	---------------------------->
+	<nav class="bg-white border-tuna-200 dark:bg-tuna-900 fixed w-full z-10  top-0 left-0 ">
+		<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+			<a href="https://flowbite.com/" class="flex items-center">
+				<img src="../public/images/logo2.svg" class="h-8 mr-3" alt="Flowbite Logo" />
+				<span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+					Acumulado RD-<span class=" dark:text-primary-500 ">POINTS</span>
+				</span>
+			</a>
+			<div class="flex md:order-2">
+				<button of-modal="idModalLogOut" type="button" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none 
+													focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-primary-600 dark:hover:bg-primary-700 
+													dark:focus:ring-primary-800">Cerrar sesión</button>
+													<!--<button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm 
+														text-tuna-500 rounded-lg md:hidden hover:bg-tuna-100 focus:outline-none focus:ring-2 focus:ring-tuna-200 dark:text-tuna-400 
+													dark:hover:bg-tuna-700 dark:focus:ring-tuna-600" aria-controls="navbar-cta" aria-expanded="false">-->
+													<!--<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"> <path 
+														stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/> </svg>-->
+													<!--</button>-->
+			</div>
+		</div>
+	</nav>
+	<!-------------------------------CONTENT-------------------------------->
+	<div class="container shadow-lg mx-auto mt-24 md:mt-16 h-screen">
+		<p id="idUserName" class="text-2xl font-semibold text-tuna-900 dark:text-white p-5">...</p>
+		<table class="w-full text-sm text-left text-tuna-500 dark:text-tuna-400 table-auto">
+			<thead class="text-xs text-tuna-700 uppercase bg-tuna-100 dark:bg-tuna-700 dark:text-tuna-400">
+				<tr>
+					<th scope="col" class="px-6 py-3 rounded-tl-lg">
+						Actividad </th>
+					<th scope="col" class="px-6 py-3 rounded-tr-lg">
+						RD-<span class=" dark:text-primary-500 ">POINTS</span> </th>
+				</tr>
+			</thead>
+			<tbody id="idTbody">
+				<tr id="idRowTemplate" class="bg-white dark:bg-tuna-800 border-b dark:border-gray-600" hidden>
+					<th scope="row" class="px-6 py-4 font-medium text-tuna-900 whitespace-nowrap dark:text-white"> </th>
+					<td class="px-6 py-4 dark:text-white"> </td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr id="idRowFootTemplate" class="font-semibold text-tuna-900 dark:text-white" hidden>
+					<th scope="row" class="px-6 py-3 text-base">---</th>
+					<td class="px-6 py-3">---</td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+	<!-- ----------------------------MODAL------------------->
+	<div id="idModalLogOut" tabindex="-1" class="hidden fixed top-0 left-0 right-0 z-50 justify-center flex items-center p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+		<div class="relative w-full max-w-md max-h-full">
+			<div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+				<button type="button" of-modal-hide="idModalLogOut"
+					class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"> 
+					<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+					</svg>
+					<span class="sr-only">Close modal</span>
+				</button>
+				<div class="p-6 text-center">
+					<svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 
+											20">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 
+													0Z"/>
+					</svg>
+					<h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Confirmas cerrar sesión?</h3>
+					<button of-modal-hide="idModalLogOut" type="button" 
+						class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-6 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 mr-2">
+						Cancelar
+					</button>
+					<button id="idOkLogOut" data-modal-hide="popup-modal" type="button" 
+						class="text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:focus:ring-primary-800 font-medium rounded-lg text-sm inline-flex items-center px-6 py-2.5 text-center ">
+						OK
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
 </html>
