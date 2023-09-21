@@ -133,6 +133,8 @@ app.get('/', (c) => {
 	return c.html(Bun.file('./public/index.html'));
 });
 
+app.get('/favicon.ico',(c)=>{return new Response(Bun.file('./public/images/favicon.ico'));});
+
 app.get("/public/*", async (ctx) => {
 	const url = new URL(ctx.req.url);
 	const filePath = '.' + (url.pathname === "/" ? "/index.html" : url.pathname);

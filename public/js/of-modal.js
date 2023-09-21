@@ -3,22 +3,35 @@ export function uniqueModal() {
 	const closers = document.querySelectorAll('[of-modal-hide]');
 	const idModal = trigger?.getAttribute('of-modal');
 	const modal = document.getElementById(idModal);
-	trigger?.addEventListener('click', () => {	
-		console.log('trigger click');
-		modal?.classList.remove('hidden');
-	});
+	const bg = document.createElement('div');
+	bg.setAttribute('of-modal-bg', true);
+	bg.classList.add('hidden','bg-gray-900','bg-opacity-50','dark:bg-opacity-80','fixed','inset-0','z-40');
+	document.body.appendChild(bg);
+	
+	trigger?.addEventListener('click', () => ShowModal(modal) );
+
 	modal?.addEventListener('click', (e) => {
 		if(e.target !== e.currentTarget) return;
-			modal?.classList.add('hidden');
+		HideModal(modal);
 	});
-	console.log('modal', modal);
+
 	document.addEventListener('keydown', (event) => {
 		if (event.key === 'Escape') 
-			modal?.classList.add('hidden');
+			HideModal(modal);
 	});
+
 	closers?.forEach((item) => {
-		item?.addEventListener('click', () => {
-			modal?.classList.add('hidden');
-		});
+		item?.addEventListener('click',()=> HideModal(modal) );
 	});
 }
+
+function ShowModal(modal) {
+	document.querySelector('[of-modal-bg]')?.classList.remove('hidden');
+	modal?.classList.remove('hidden');
+}
+
+function HideModal(modal) {
+	document.querySelector('[of-modal-bg]')?.classList.add('hidden');
+	modal?.classList.add('hidden');
+}
+
