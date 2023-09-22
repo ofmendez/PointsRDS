@@ -8,30 +8,25 @@ export function uniqueModal() {
 	bg.classList.add('hidden','bg-gray-900','bg-opacity-50','dark:bg-opacity-80','fixed','inset-0','z-40');
 	document.body.appendChild(bg);
 	
-	trigger?.addEventListener('click', () => ShowModal(modal) );
+	trigger?.addEventListener('click', () => ToggleModal(modal) );
 
 	modal?.addEventListener('click', (e) => {
 		if(e.target !== e.currentTarget) return;
-		HideModal(modal);
+		ToggleModal(modal);
 	});
 
 	document.addEventListener('keydown', (event) => {
-		if (event.key === 'Escape') 
-			HideModal(modal);
+		if (event.key === 'Escape' && !modal.classList.contains('hidden')) 
+			ToggleModal(modal);
 	});
 
 	closers?.forEach((item) => {
-		item?.addEventListener('click',()=> HideModal(modal) );
+		item?.addEventListener('click',()=> ToggleModal(modal) );
 	});
 }
 
-function ShowModal(modal) {
-	document.querySelector('[of-modal-bg]')?.classList.remove('hidden');
-	modal?.classList.remove('hidden');
-}
-
-function HideModal(modal) {
-	document.querySelector('[of-modal-bg]')?.classList.add('hidden');
-	modal?.classList.add('hidden');
+function ToggleModal(modal) {
+	document.querySelector('[of-modal-bg]')?.classList.toggle('hidden');
+	modal?.classList.toggle('hidden');
 }
 
