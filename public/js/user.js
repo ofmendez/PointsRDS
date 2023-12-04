@@ -38,15 +38,17 @@ function ProcessData(result){
 }
 
 function FillData(data){
+	const columnTotal = data.titles.length-1;
+	const negativeColumns = [data.titles.length-3,data.titles.length-2];
 	const name = data.score[1]+' '+data.score[2];
 	const rowTemplate = document.getElementById('idRowTemplate');
 	const rowFootTemplate = document.getElementById('idRowFootTemplate');
 	data.titles.forEach((title, index) => {if(index > 2){
-		const template = index === 14 ? rowFootTemplate : rowTemplate;
+		const template = index === columnTotal ? rowFootTemplate : rowTemplate;
 		const row = template.cloneNode(true);	
 		row.removeAttribute('hidden');
 		row.children[0].innerHTML = title;
-		if(index ===12 || index === 13)
+		if(negativeColumns.includes(index))
 			row.children[0].classList.add('dark:bg-primary-700');
 		row.children[1].innerHTML = data.score[index];
 		template.parentElement.appendChild(row);

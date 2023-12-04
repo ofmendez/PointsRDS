@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 const serviceAccountKeyFile = "./data/steadfast-karma-177403-5484f69a7b47.json";
 const sheetId = '1Gpa2pbEs3cm1jKRB7MkDsMPV7mlzQ0RgJzmnO_v13rQ'
 const tabName = 'Acumulado' //TODO change to Acumulado
-const range = 'B:P'
+const range = 'B:Z'
 
 
 const ofToken = 'ofmendez-is-cool';
@@ -95,7 +95,7 @@ async function checkAuth(_email, _password) {
 		//console.log(user.email === _email, user.password === _password);
 		//console.log(user.email === _email && user.password === _password);
 		//console.log(user.email === _email & user.password === _password);
-		if(user.email === _email && user.password === _password)
+		if(user.email.toLowerCase() === _email.toLowerCase() && user.password === _password)
 			result = {exist:true, user: user};
 	});
 	return result;
