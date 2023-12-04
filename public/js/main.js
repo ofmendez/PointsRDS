@@ -18,7 +18,7 @@ window.TryLogin = (form)=>{
 function ProcessLogin(result, form){
 	console.log('ProcessLogin', result);
 	let json = JSON.parse(result);
-	if(json.response==='You are loged' && json.token !== ''){
+	if(json.response === 'You are loged' && json.token !== ''){
 		form.reset();
 		localStorage.setItem('token', json.token);
 		localStorage.setItem('id', json.id);
