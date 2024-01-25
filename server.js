@@ -27,19 +27,6 @@ async function _getGoogleSheetRow(_email) {
 	});
 	return {data: data, titles: titles};
 }
-//main().then(() => {
-  //console.log('Completed')
-//})
-async function main() {
-	// Generating google sheet client
-	const googleSheetClient = await _getGoogleSheetClient();
-	// Reading Google Sheet from a specific range
-	const data = await _readGoogleSheet(googleSheetClient, sheetId, tabName, range);
-	console.log(data);
-	// Adding a new row to Google Sheet
-	const dataToBeInserted = [ ['11', 'rohith', 'Rohith', 'Sharma', 'Active'], ['12', 'virat', 'Virat', 'Kohli', 'Active'] ]
-	//await _writeGoogleSheet(googleSheetClient, sheetId, tabName, range, dataToBeInserted);
-}
 
 async function _getGoogleSheetClient() {
 	const auth = new google.auth.GoogleAuth({
@@ -73,8 +60,7 @@ async function _writeGoogleSheet(googleSheetClient, sheetId, tabName, range, dat
 		},
 	})
 }
-//////////////////////////////////END 
-//G-SHEETS/////////////////////////////////////////
+//////////////////////////////////END G-SHEETS/////////////////////////////////////////
 
 
 async function getEmail(_id) {
@@ -92,19 +78,15 @@ async function checkAuth(_email, _password) {
 	
 	let result = {exist:false, user: {id:-1}};
 	data.forEach((user) => {
-		//console.log(user.email === _email, user.password === _password);
-		//console.log(user.email === _email && user.password === _password);
-		//console.log(user.email === _email & user.password === _password);
 		if(user.email.toLowerCase() === _email.toLowerCase() && user.password === _password)
 			result = {exist:true, user: user};
 	});
 	return result;
 }
+
 //console.log(await checkAuth('',''));
 console.log(await checkAuth('admin@reddesignsystems.com',''));
 console.log(await checkAuth('admin@reddesignsystems.com','6969'));
-//console.log(await checkAuth('rh@reddesignsystems.com','6969'));
-//console.log(await checkAuth('rh@reddesignsystems.com','nnnn'));
 
 const app = new Hono();
 

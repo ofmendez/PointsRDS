@@ -29,7 +29,6 @@ function LogOut(){
 }
 
 function ProcessData(result){
-	console.log('ProcessData', result);
 	let data = JSON.parse(result);
 	if(data.message === 'You are authorized')
 		FillData(data);
@@ -38,12 +37,14 @@ function ProcessData(result){
 }
 
 function FillData(data){
-	const columnTotal = data.titles.length-1;
-	const negativeColumns = [data.titles.length-3,data.titles.length-2];
+	const offset = 2;
+	const columnTotal = data.titles.length-offset;
+	const negativeColumns = [data.titles.length-offset-2,data.titles.length-offset-1];
 	const name = data.score[1]+' '+data.score[2];
+	const avatar = data.score[data.titles.length-1];
 	const rowTemplate = document.getElementById('idRowTemplate');
 	const rowFootTemplate = document.getElementById('idRowFootTemplate');
-	data.titles.forEach((title, index) => {if(index > 2){
+	data.titles.forEach((title, index) => {if(index > 2 && index < data.titles.length-1){
 		const template = index === columnTotal ? rowFootTemplate : rowTemplate;
 		const row = template.cloneNode(true);	
 		row.removeAttribute('hidden');
@@ -55,6 +56,7 @@ function FillData(data){
 	}});
 
 	document.getElementById('idUserName').innerHTML = name;
+	window.idUserAvatar.src = avatar?avatar :'/public/images/noUser.svg';
 }
 
 

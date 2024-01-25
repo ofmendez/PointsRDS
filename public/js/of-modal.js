@@ -28,5 +28,6 @@ export function uniqueModal() {
 function ToggleModal(modal) {
 	document.querySelector('[of-modal-bg]')?.classList.toggle('hidden');
 	modal?.classList.toggle('hidden');
+	modal?.classList.toggle('flex');
 }
 
